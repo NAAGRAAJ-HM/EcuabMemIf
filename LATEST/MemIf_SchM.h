@@ -1,6 +1,6 @@
 #pragma once
 /*****************************************************/
-/* File   : MemIf_EcuM.h                             */
+/* File   : MemIf_SchM.h                             */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
@@ -9,7 +9,7 @@
 /*****************************************************/
 #include "Compiler_Cfg_MemIf.h"
 
-#include "EcuM_Client.h"
+#include "SchM_Client.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -22,13 +22,12 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class interface_MemIf_EcuM : public interface_EcuM_Client{
+class interface_MemIf_SchM : public interface_SchM_Client{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, MEMIF_CODE) InitFunction   (void);
-      FUNC(void, MEMIF_CODE) DeInitFunction (void);
+      FUNC(void, MEMIF_CODE) MainFunction(void);
 };
 
 /*****************************************************/
@@ -42,7 +41,7 @@ class interface_MemIf_EcuM : public interface_EcuM_Client{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern interface_MemIf_EcuM *EcuM_Client_ptr_MemIf;
+extern interface_MemIf_SchM *SchM_Client_ptr_MemIf;
 
 /*****************************************************/
 /* EOF                                               */
