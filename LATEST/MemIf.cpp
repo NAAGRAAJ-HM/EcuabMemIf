@@ -8,6 +8,7 @@
 /*****************************************************/
 #include "module.h"
 #include "MemIf_EcuM.h"
+#include "MemIf_NvM.h"
 #include "MemIf_SchM.h"
 #include "MemIf_Unused.h"
 
@@ -26,11 +27,15 @@ class module_MemIf:
       public abstract_module
    ,  public interface_MemIf_EcuM
    ,  public interface_MemIf_SchM
+   ,  public interface_MemIf_NvM
 {
    public:
       FUNC(void, MEMIF_CODE) InitFunction   (void);
       FUNC(void, MEMIF_CODE) DeInitFunction (void);
       FUNC(void, MEMIF_CODE) MainFunction   (void);
+      FUNC(void, MEMIF_CODE) Cancel         (void);
+      FUNC(void, MEMIF_CODE) Read           (void);
+      FUNC(void, MEMIF_CODE) Write          (void);
 };
 
 /*****************************************************/
@@ -61,16 +66,16 @@ FUNC(void, MEMIF_CODE) module_MemIf::DeInitFunction(void){
 FUNC(void, MEMIF_CODE) module_MemIf::MainFunction(void){
 }
 
+FUNC(void, MEMIF_CODE) module_MemIf::Cancel(void){
+}
+
+FUNC(void, MEMIF_CODE) module_MemIf::Read(void){
+}
+
+FUNC(void, MEMIF_CODE) module_MemIf::Write(void){
+}
+
 FUNC(void, MEMIF_CODE) class_MemIf_Unused::SetMode(void){
-}
-
-FUNC(void, MEMIF_CODE) class_MemIf_Unused::Read(void){
-}
-
-FUNC(void, MEMIF_CODE) class_MemIf_Unused::Write(void){
-}
-
-FUNC(void, MEMIF_CODE) class_MemIf_Unused::Cancel(void){
 }
 
 FUNC(void, MEMIF_CODE) class_MemIf_Unused::GetStatus(void){
