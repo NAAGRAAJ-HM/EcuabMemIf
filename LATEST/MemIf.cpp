@@ -25,8 +25,6 @@
 /*****************************************************/
 class module_MemIf:
       public abstract_module
-   ,  public interface_MemIf_EcuM
-   ,  public interface_MemIf_SchM
    ,  public interface_MemIf_NvM
 {
    public:
@@ -49,10 +47,9 @@ class module_MemIf:
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-module_MemIf MemIf;
-
-interface_MemIf_EcuM *EcuM_Client_ptr_MemIf = &MemIf;
-interface_MemIf_SchM *SchM_Client_ptr_MemIf = &MemIf;
+module_MemIf   MemIf;
+infEcuMClient* gptrinfEcuMClient_MemIf = &MemIf;
+infSchMClient* gptrinfSchMClient_MemIf = &MemIf;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
