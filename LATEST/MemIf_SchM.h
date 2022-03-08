@@ -32,7 +32,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern interface_MemIf_SchM *SchM_Client_ptr_MemIf;
+extern infSchMClient *gptrinfSchMClient_MemIf;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
