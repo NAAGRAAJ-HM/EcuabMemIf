@@ -32,7 +32,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern infSchMClient *gptrinfSchMClient_MemIf;
+extern infSchMClient* gptrinfSchMClient_MemIf;
 
 /*****************************************************/
 /* FUNCTIONS                                         */

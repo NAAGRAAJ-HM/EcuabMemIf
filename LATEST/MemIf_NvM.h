@@ -9,8 +9,6 @@
 /*****************************************************/
 #include "Compiler_Cfg_MemIf.h"
 
-//#include "NvM_Client.h"
-
 /*****************************************************/
 /* #DEFINES                                          */
 /*****************************************************/
@@ -22,16 +20,14 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class interface_MemIf_NvM
-//   :  public interface_NvM_Client
-{
+class infMemIf_NvM{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, MEMIF_CODE) Cancel (void);
-      FUNC(void, MEMIF_CODE) Read   (void);
-      FUNC(void, MEMIF_CODE) Write  (void);
+      virtual FUNC(void, MEMIF_CODE) Cancel (void) = 0;
+      virtual FUNC(void, MEMIF_CODE) Read   (void) = 0;
+      virtual FUNC(void, MEMIF_CODE) Write  (void) = 0;
 };
 
 /*****************************************************/
@@ -45,7 +41,7 @@ class interface_MemIf_NvM
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern interface_MemIf_NvM *NvM_Client_ptr_MemIf;
+extern infMemIf_NvM* gptrinfMemIf_NvM;
 
 /*****************************************************/
 /* EOF                                               */

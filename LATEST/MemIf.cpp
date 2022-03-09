@@ -25,7 +25,7 @@
 /*****************************************************/
 class module_MemIf:
       public abstract_module
-   ,  public interface_MemIf_NvM
+   ,  public infMemIf_NvM
 {
    public:
       FUNC(void, MEMIF_CODE) InitFunction   (void);
@@ -50,6 +50,7 @@ class module_MemIf:
 module_MemIf   MemIf;
 infEcuMClient* gptrinfEcuMClient_MemIf = &MemIf;
 infSchMClient* gptrinfSchMClient_MemIf = &MemIf;
+infMemIf_NvM*  gptrinfMemIf_NvM        = &MemIf;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
