@@ -7,9 +7,10 @@
 /* #INCLUDES                                         */
 /*****************************************************/
 #include "module.h"
-#include "MemIf_EcuM.h"
-#include "MemIf_NvM.h"
-#include "MemIf_SchM.h"
+#include "infMemIf_EcuM.h"
+#include "infMemIf_Dcm.h"
+#include "infMemIf_SchM.h"
+#include "infMemIf_NvM.h"
 #include "MemIf_Unused.h"
 
 /*****************************************************/
@@ -30,6 +31,7 @@ class module_MemIf:
    public:
       FUNC(void, MEMIF_CODE) InitFunction   (void);
       FUNC(void, MEMIF_CODE) DeInitFunction (void);
+      FUNC(void, MEMIF_CODE) GetVersionInfo (void);
       FUNC(void, MEMIF_CODE) MainFunction   (void);
       FUNC(void, MEMIF_CODE) Cancel         (void);
       FUNC(void, MEMIF_CODE) Read           (void);
@@ -49,6 +51,7 @@ class module_MemIf:
 /*****************************************************/
 module_MemIf   MemIf;
 infEcuMClient* gptrinfEcuMClient_MemIf = &MemIf;
+infDcmClient*  gptrinfDcmClient_MemIf  = &MemIf;
 infSchMClient* gptrinfSchMClient_MemIf = &MemIf;
 infMemIf_NvM*  gptrinfMemIf_NvM        = &MemIf;
 
@@ -59,6 +62,9 @@ FUNC(void, MEMIF_CODE) module_MemIf::InitFunction(void){
 }
 
 FUNC(void, MEMIF_CODE) module_MemIf::DeInitFunction(void){
+}
+
+FUNC(void, MEMIF_CODE) module_MemIf::GetVersionInfo(void){
 }
 
 FUNC(void, MEMIF_CODE) module_MemIf::MainFunction(void){
