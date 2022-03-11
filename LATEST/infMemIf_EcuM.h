@@ -1,16 +1,13 @@
+#pragma once
 /*****************************************************/
-/* File   : MemIf.cpp                                */
+/* File   : infMemIf_EcuM.h                          */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "module.h"
-#include "infMemIf_EcuM.h"
-#include "infMemIf_Dcm.h"
-#include "infMemIf_SchM.h"
-#include "infMemIf_NvM.h"
+#include "Compiler_Cfg_MemIf.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -23,19 +20,6 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class module_MemIf:
-      public abstract_module
-   ,  public infMemIf_NvM
-{
-   public:
-      FUNC(void, MEMIF_CODE) InitFunction   (void);
-      FUNC(void, MEMIF_CODE) DeInitFunction (void);
-      FUNC(void, MEMIF_CODE) GetVersionInfo (void);
-      FUNC(void, MEMIF_CODE) MainFunction   (void);
-      FUNC(void, MEMIF_CODE) Cancel         (void);
-      FUNC(void, MEMIF_CODE) Read           (void);
-      FUNC(void, MEMIF_CODE) Write          (void);
-};
 
 /*****************************************************/
 /* CONSTS                                            */
@@ -48,52 +32,11 @@ class module_MemIf:
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-module_MemIf   MemIf;
-infEcuMClient* gptrinfEcuMClient_MemIf = &MemIf;
-infDcmClient*  gptrinfDcmClient_MemIf  = &MemIf;
-infSchMClient* gptrinfSchMClient_MemIf = &MemIf;
-infMemIf_NvM*  gptrinfMemIf_NvM        = &MemIf;
+extern infEcuMClient* gptrinfEcuMClient_MemIf;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, MEMIF_CODE) module_MemIf::InitFunction(void){
-}
-
-FUNC(void, MEMIF_CODE) module_MemIf::DeInitFunction(void){
-}
-
-FUNC(void, MEMIF_CODE) module_MemIf::GetVersionInfo(void){
-}
-
-FUNC(void, MEMIF_CODE) module_MemIf::MainFunction(void){
-}
-
-FUNC(void, MEMIF_CODE) module_MemIf::Cancel(void){
-}
-
-FUNC(void, MEMIF_CODE) module_MemIf::Read(void){
-}
-
-FUNC(void, MEMIF_CODE) module_MemIf::Write(void){
-}
-
-#include "MemIf_Unused.h"
-
-FUNC(void, MEMIF_CODE) class_MemIf_Unused::SetMode(void){
-}
-
-FUNC(void, MEMIF_CODE) class_MemIf_Unused::GetStatus(void){
-}
-
-FUNC(void, MEMIF_CODE) class_MemIf_Unused::GetJobResult(void){
-}
-
-FUNC(void, MEMIF_CODE) class_MemIf_Unused::InvalidateBlock(void){
-}
-
-FUNC(void, MEMIF_CODE) class_MemIf_Unused::EraseImmediateBlock(void){
-}
 
 /*****************************************************/
 /* EOF                                               */

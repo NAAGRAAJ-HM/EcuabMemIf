@@ -1,6 +1,6 @@
 #pragma once
 /*****************************************************/
-/* File   : MemIf_EcuM.h                             */
+/* File   : infMemIf_SchM.h                          */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
@@ -32,7 +32,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern infEcuMClient* gptrinfEcuMClient_MemIf;
+extern infSchMClient* gptrinfSchMClient_MemIf;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
