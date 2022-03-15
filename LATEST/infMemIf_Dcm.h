@@ -32,7 +32,7 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern infDcmClient* gptrinfDcmClient_MemIf;
+extern CONSTP2VAR(infDcmClient, MEMIF_VAR, MEMIF_CONST) gptrinfDcmClient_MemIf;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
