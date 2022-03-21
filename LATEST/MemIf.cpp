@@ -6,9 +6,8 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "infMemIf_Version.h"
-
 #include "module.h"
+#include "infMemIf_Version.h"
 #include "infMemIf_EcuM.h"
 #include "infMemIf_Dcm.h"
 #include "infMemIf_SchM.h"
@@ -50,32 +49,21 @@ class module_MemIf:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-
-/******************************************************************************/
-/* FUNCTIONS                                                                  */
-/******************************************************************************/
-
-/******************************************************************************/
-/* EOF                                                                        */
-/******************************************************************************/
-
-
-/*****************************************************/
-/* OBJECTS                                           */
-/*****************************************************/
 VAR(module_MemIf, MEMIF_VAR) MemIf;
 CONSTP2VAR(infEcuMClient, MEMIF_VAR, MEMIF_CONST) gptrinfEcuMClient_MemIf = &MemIf;
 CONSTP2VAR(infDcmClient,  MEMIF_VAR, MEMIF_CONST) gptrinfDcmClient_MemIf  = &MemIf;
 CONSTP2VAR(infSchMClient, MEMIF_VAR, MEMIF_CONST) gptrinfSchMClient_MemIf = &MemIf;
 infMemIf_NvM*  gptrinfMemIf_NvM        = &MemIf;
 
-/*****************************************************/
-/* FUNCTIONS                                         */
-/*****************************************************/
+/******************************************************************************/
+/* FUNCTIONS                                                                  */
+/******************************************************************************/
 FUNC(void, MEMIF_CODE) module_MemIf::InitFunction(void){
+   MemIf.IsInitDone = E_OK;
 }
 
 FUNC(void, MEMIF_CODE) module_MemIf::DeInitFunction(void){
+   MemIf.IsInitDone = E_NOT_OK;
 }
 
 FUNC(void, MEMIF_CODE) module_MemIf::GetVersionInfo(void){
@@ -110,7 +98,7 @@ FUNC(void, MEMIF_CODE) class_MemIf_Unused::InvalidateBlock(void){
 FUNC(void, MEMIF_CODE) class_MemIf_Unused::EraseImmediateBlock(void){
 }
 
-/*****************************************************/
-/* EOF                                               */
-/*****************************************************/
+/******************************************************************************/
+/* EOF                                                                        */
+/******************************************************************************/
 
