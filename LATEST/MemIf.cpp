@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "infMemIf_Version.h"
+#include "MemIf_Cfg.h"
 #include "infMemIf_EcuM.h"
 #include "infMemIf_Dcm.h"
 #include "infMemIf_SchM.h"
@@ -16,10 +16,19 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define MEMIF_AR_RELEASE_MAJOR_VERSION                                         4
+#define MEMIF_AR_RELEASE_MINOR_VERSION                                         3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
+#if(MEMIF_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
+   #error "Incompatible MEMIF_AR_RELEASE_MAJOR_VERSION!"
+#endif
+
+#if(MEMIF_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
+   #error "Incompatible MEMIF_AR_RELEASE_MINOR_VERSION!"
+#endif
 
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
@@ -67,6 +76,11 @@ FUNC(void, MEMIF_CODE) module_MemIf::DeInitFunction(void){
 }
 
 FUNC(void, MEMIF_CODE) module_MemIf::GetVersionInfo(void){
+#if(STD_ON == MemIf_DevErrorDetect)
+//TBD: API parameter check
+   Det_ReportError(
+   );
+#endif
 }
 
 FUNC(void, MEMIF_CODE) module_MemIf::MainFunction(void){
