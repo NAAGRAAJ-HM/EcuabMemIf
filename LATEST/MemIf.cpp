@@ -45,6 +45,16 @@ class module_MemIf:
       FUNC(void, MEMIF_CODE) Cancel         (void);
       FUNC(void, MEMIF_CODE) Read           (void);
       FUNC(void, MEMIF_CODE) Write          (void);
+
+   private:
+      CONST(Std_TypeVersionInfo, MEMIF_CONST) VersionInfo = {
+            0x0000
+         ,  0xFFFF
+         ,  0x01
+         ,  '0'
+         ,  '1'
+         ,  '0'
+      };
 };
 
 /******************************************************************************/
