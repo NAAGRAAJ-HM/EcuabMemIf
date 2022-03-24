@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "MemIf_Cfg.h"
+#include "CfgMemIf.h"
 #include "infMemIf_EcuM.h"
 #include "infMemIf_Dcm.h"
 #include "infMemIf_SchM.h"
