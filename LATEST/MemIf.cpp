@@ -6,12 +6,12 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.h"
-#include "CfgMemIf.h"
-#include "infMemIf_EcuM.h"
-#include "infMemIf_Dcm.h"
-#include "infMemIf_SchM.h"
-#include "infMemIf_NvM.h"
+#include "module.hpp"
+#include "CfgMemIf.hpp"
+#include "infMemIf_EcuM.hpp"
+#include "infMemIf_Dcm.hpp"
+#include "infMemIf_SchM.hpp"
+#include "infMemIf_NvM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -105,7 +105,7 @@ FUNC(void, MEMIF_CODE) module_MemIf::Read(void){
 FUNC(void, MEMIF_CODE) module_MemIf::Write(void){
 }
 
-#include "MemIf_Unused.h"
+#include "MemIf_Unused.hpp"
 
 FUNC(void, MEMIF_CODE) class_MemIf_Unused::SetMode(void){
 }
