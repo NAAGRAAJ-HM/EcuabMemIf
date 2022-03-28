@@ -72,7 +72,7 @@ VAR(module_MemIf, MEMIF_VAR) MemIf;
 CONSTP2VAR(infEcuMClient, MEMIF_VAR, MEMIF_CONST) gptrinfEcuMClient_MemIf = &MemIf;
 CONSTP2VAR(infDcmClient,  MEMIF_VAR, MEMIF_CONST) gptrinfDcmClient_MemIf  = &MemIf;
 CONSTP2VAR(infSchMClient, MEMIF_VAR, MEMIF_CONST) gptrinfSchMClient_MemIf = &MemIf;
-infMemIf_NvM*  gptrinfMemIf_NvM        = &MemIf;
+CONSTP2VAR(infMemIf_NvM,  MEMIF_VAR, MEMIF_CONST) gptrinfMemIf_NvM        = &MemIf;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
@@ -105,7 +105,18 @@ FUNC(void, MEMIF_CODE) module_MemIf::Read(void){
 FUNC(void, MEMIF_CODE) module_MemIf::Write(void){
 }
 
-#include "MemIf_Unused.hpp"
+class class_MemIf_Unused{
+   public:
+      FUNC(void, MEMIF_CODE) SetMode             (void);
+      FUNC(void, MEMIF_CODE) Read                (void);
+      FUNC(void, MEMIF_CODE) Write               (void);
+      FUNC(void, MEMIF_CODE) Cancel              (void);
+      FUNC(void, MEMIF_CODE) GetStatus           (void);
+      FUNC(void, MEMIF_CODE) GetJobResult        (void);
+      FUNC(void, MEMIF_CODE) GetVersionInfo      (void);
+      FUNC(void, MEMIF_CODE) InvalidateBlock     (void);
+      FUNC(void, MEMIF_CODE) EraseImmediateBlock (void);
+};
 
 FUNC(void, MEMIF_CODE) class_MemIf_Unused::SetMode(void){
 }
