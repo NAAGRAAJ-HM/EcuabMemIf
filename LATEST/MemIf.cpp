@@ -7,7 +7,6 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.hpp"
-#include "CfgMemIf.hpp"
 #include "infMemIf_EcuM.hpp"
 #include "infMemIf_Dcm.hpp"
 #include "infMemIf_SchM.hpp"
@@ -38,41 +37,45 @@ class module_MemIf:
    ,  public infMemIf_NvM
 {
    public:
+      module_MemIf(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
+      }
       FUNC(void, MEMIF_CODE) InitFunction   (void);
       FUNC(void, MEMIF_CODE) DeInitFunction (void);
-      FUNC(void, MEMIF_CODE) GetVersionInfo (void);
       FUNC(void, MEMIF_CODE) MainFunction   (void);
+
       FUNC(void, MEMIF_CODE) Cancel         (void);
       FUNC(void, MEMIF_CODE) Read           (void);
       FUNC(void, MEMIF_CODE) Write          (void);
-
-   private:
-      CONST(Std_TypeVersionInfo, MEMIF_CONST) VersionInfo = {
-            0x0000
-         ,  0xFFFF
-         ,  0x01
-         ,  '0'
-         ,  '1'
-         ,  '0'
-      };
 };
+
+extern VAR(module_MemIf, MEMIF_VAR) MemIf;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
 /******************************************************************************/
-
-/******************************************************************************/
-/* PARAMS                                                                     */
-/******************************************************************************/
-
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-VAR(module_MemIf, MEMIF_VAR) MemIf;
 CONSTP2VAR(infEcuMClient, MEMIF_VAR, MEMIF_CONST) gptrinfEcuMClient_MemIf = &MemIf;
 CONSTP2VAR(infDcmClient,  MEMIF_VAR, MEMIF_CONST) gptrinfDcmClient_MemIf  = &MemIf;
 CONSTP2VAR(infSchMClient, MEMIF_VAR, MEMIF_CONST) gptrinfSchMClient_MemIf = &MemIf;
 CONSTP2VAR(infMemIf_NvM,  MEMIF_VAR, MEMIF_CONST) gptrinfMemIf_NvM        = &MemIf;
+
+/******************************************************************************/
+/* PARAMS                                                                     */
+/******************************************************************************/
+#include "CfgMemIf.hpp"
+
+/******************************************************************************/
+/* OBJECTS                                                                    */
+/******************************************************************************/
+VAR(module_MemIf, MEMIF_VAR) MemIf(
+   {
+         0x0000
+      ,  0xFFFF
+      ,  0x01
+      ,  '0'
+      ,  '1'
+      ,  '0'
+   }
+);
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
@@ -83,14 +86,6 @@ FUNC(void, MEMIF_CODE) module_MemIf::InitFunction(void){
 
 FUNC(void, MEMIF_CODE) module_MemIf::DeInitFunction(void){
    MemIf.IsInitDone = E_NOT_OK;
-}
-
-FUNC(void, MEMIF_CODE) module_MemIf::GetVersionInfo(void){
-#if(STD_ON == MemIf_DevErrorDetect)
-//TBD: API parameter check
-   Det_ReportError(
-   );
-#endif
 }
 
 FUNC(void, MEMIF_CODE) module_MemIf::MainFunction(void){
