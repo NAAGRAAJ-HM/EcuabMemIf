@@ -6,7 +6,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.hpp"
+#include "Module.hpp"
 #include "infMemIf_EcuM.hpp"
 #include "infMemIf_Dcm.hpp"
 #include "infMemIf_SchM.hpp"
@@ -39,6 +39,9 @@ class module_MemIf:
    public:
       module_MemIf(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
+      FUNC(void, _CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      );
       FUNC(void, MEMIF_CODE) InitFunction   (void);
       FUNC(void, MEMIF_CODE) DeInitFunction (void);
       FUNC(void, MEMIF_CODE) MainFunction   (void);
@@ -80,7 +83,19 @@ VAR(module_MemIf, MEMIF_VAR) MemIf(
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, MEMIF_CODE) module_MemIf::InitFunction(void){
+FUNC(void, MEMIF_CODE) module_MemIf::InitFunction(
+   CONSTP2CONST(CfgMemIf_Type, CFGMEMIF_CONFIG_DATA, CFGMEMIF_APPL_CONST) lptrCfgMemIf
+){
+   if(NULL_PTR == lptrCfgMemIf){
+#if(STD_ON == MemIf_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+// check lptrCfgMemIf for memory faults
+// use PBcfg_MemIf as back-up configuration
+   }
    MemIf.IsInitDone = E_OK;
 }
 
