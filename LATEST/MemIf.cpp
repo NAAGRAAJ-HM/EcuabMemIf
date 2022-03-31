@@ -39,10 +39,9 @@ class module_MemIf:
    public:
       module_MemIf(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
-      FUNC(void, _CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      FUNC(void, MEMIF_CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, MEMIF_CONFIG_DATA, MEMIF_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, MEMIF_CODE) InitFunction   (void);
       FUNC(void, MEMIF_CODE) DeInitFunction (void);
       FUNC(void, MEMIF_CODE) MainFunction   (void);
 
@@ -84,23 +83,39 @@ VAR(module_MemIf, MEMIF_VAR) MemIf(
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, MEMIF_CODE) module_MemIf::InitFunction(
-   CONSTP2CONST(CfgMemIf_Type, CFGMEMIF_CONFIG_DATA, CFGMEMIF_APPL_CONST) lptrCfgMemIf
+   CONSTP2CONST(CfgModule_TypeAbstract, MEMIF_CONFIG_DATA, MEMIF_APPL_CONST) lptrCfgModule
 ){
-   if(NULL_PTR == lptrCfgMemIf){
+   if(E_OK == IsInitDone){
 #if(STD_ON == MemIf_DevErrorDetect)
       Det_ReportError(
       );
 #endif
    }
    else{
-// check lptrCfgMemIf for memory faults
+      if(NULL_PTR == lptrCfgModule){
+#if(STD_ON == MemIf_DevErrorDetect)
+         Det_ReportError(
+         );
+#endif
+      }
+      else{
+// check lptrCfgModule for memory faults
 // use PBcfg_MemIf as back-up configuration
+      }
+      IsInitDone = E_OK;
    }
-   MemIf.IsInitDone = E_OK;
 }
 
 FUNC(void, MEMIF_CODE) module_MemIf::DeInitFunction(void){
-   MemIf.IsInitDone = E_NOT_OK;
+   if(E_OK != IsInitDone){
+#if(STD_ON == MemIf_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+      IsInitDone = E_NOT_OK;
+   }
 }
 
 FUNC(void, MEMIF_CODE) module_MemIf::MainFunction(void){
