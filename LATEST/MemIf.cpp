@@ -85,6 +85,7 @@ VAR(module_MemIf, MEMIF_VAR) MemIf(
 FUNC(void, MEMIF_CODE) module_MemIf::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, MEMIF_CONFIG_DATA, MEMIF_APPL_CONST) lptrCfgModule
 ){
+#if(STD_ON == MemIf_InitCheck)
    if(E_OK == IsInitDone){
 #if(STD_ON == MemIf_DevErrorDetect)
       Det_ReportError(
@@ -92,6 +93,7 @@ FUNC(void, MEMIF_CODE) module_MemIf::InitFunction(
 #endif
    }
    else{
+#endif
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == MemIf_DevErrorDetect)
          Det_ReportError(
@@ -103,10 +105,13 @@ FUNC(void, MEMIF_CODE) module_MemIf::InitFunction(
 // use PBcfg_MemIf as back-up configuration
       }
       IsInitDone = E_OK;
+#if(STD_ON == MemIf_InitCheck)
    }
+#endif
 }
 
 FUNC(void, MEMIF_CODE) module_MemIf::DeInitFunction(void){
+#if(STD_ON == MemIf_InitCheck)
    if(E_OK != IsInitDone){
 #if(STD_ON == MemIf_DevErrorDetect)
       Det_ReportError(
@@ -114,11 +119,26 @@ FUNC(void, MEMIF_CODE) module_MemIf::DeInitFunction(void){
 #endif
    }
    else{
+#endif
       IsInitDone = E_NOT_OK;
+#if(STD_ON == MemIf_InitCheck)
    }
+#endif
 }
 
 FUNC(void, MEMIF_CODE) module_MemIf::MainFunction(void){
+#if(STD_ON == MemIf_InitCheck)
+   if(E_OK != IsInitDone){
+#if(STD_ON == MemIf_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+#endif
+#if(STD_ON == MemIf_InitCheck)
+   }
+#endif
 }
 
 FUNC(void, MEMIF_CODE) module_MemIf::Cancel(void){
