@@ -108,8 +108,8 @@ FUNC(void, MEMIF_CODE) module_MemIf::InitFunction(
             lptrCfg = lptrCfgModule;
          }
          else{
-// use PBcfg_CanIf as back-up configuration
-            lptrCfg = PBcfg_CanIf;
+// use PBcfgCanIf as back-up configuration
+            lptrCfg = &PBcfgMemIf;
          }
       }
       IsInitDone = E_OK;
