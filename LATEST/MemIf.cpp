@@ -32,9 +32,23 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
+class class_MemIf_Functionality{
+   public:
+      FUNC(void, MEMIF_CODE) SetMode             (void);
+      FUNC(void, MEMIF_CODE) Read                (void);
+      FUNC(void, MEMIF_CODE) Write               (void);
+      FUNC(void, MEMIF_CODE) Cancel              (void);
+      FUNC(void, MEMIF_CODE) GetStatus           (void);
+      FUNC(void, MEMIF_CODE) GetJobResult        (void);
+      FUNC(void, MEMIF_CODE) GetVersionInfo      (void);
+      FUNC(void, MEMIF_CODE) InvalidateBlock     (void);
+      FUNC(void, MEMIF_CODE) EraseImmediateBlock (void);
+};
+
 class module_MemIf:
       public abstract_module
    ,  public infMemIf_NvM
+   ,  public class_MemIf_Functionality
 {
    public:
       module_MemIf(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
@@ -91,6 +105,10 @@ FUNC(void, MEMIF_CODE) module_MemIf::InitFunction(
    if(E_OK == IsInitDone){
 #if(STD_ON == MemIf_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -99,6 +117,10 @@ FUNC(void, MEMIF_CODE) module_MemIf::InitFunction(
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == MemIf_DevErrorDetect)
          Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
          );
 #endif
       }
@@ -123,6 +145,10 @@ FUNC(void, MEMIF_CODE) module_MemIf::DeInitFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == MemIf_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -139,6 +165,10 @@ FUNC(void, MEMIF_CODE) module_MemIf::MainFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == MemIf_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -158,32 +188,19 @@ FUNC(void, MEMIF_CODE) module_MemIf::Read(void){
 FUNC(void, MEMIF_CODE) module_MemIf::Write(void){
 }
 
-class class_MemIf_Unused{
-   public:
-      FUNC(void, MEMIF_CODE) SetMode             (void);
-      FUNC(void, MEMIF_CODE) Read                (void);
-      FUNC(void, MEMIF_CODE) Write               (void);
-      FUNC(void, MEMIF_CODE) Cancel              (void);
-      FUNC(void, MEMIF_CODE) GetStatus           (void);
-      FUNC(void, MEMIF_CODE) GetJobResult        (void);
-      FUNC(void, MEMIF_CODE) GetVersionInfo      (void);
-      FUNC(void, MEMIF_CODE) InvalidateBlock     (void);
-      FUNC(void, MEMIF_CODE) EraseImmediateBlock (void);
-};
-
-FUNC(void, MEMIF_CODE) class_MemIf_Unused::SetMode(void){
+FUNC(void, MEMIF_CODE) class_MemIf_Functionality::SetMode(void){
 }
 
-FUNC(void, MEMIF_CODE) class_MemIf_Unused::GetStatus(void){
+FUNC(void, MEMIF_CODE) class_MemIf_Functionality::GetStatus(void){
 }
 
-FUNC(void, MEMIF_CODE) class_MemIf_Unused::GetJobResult(void){
+FUNC(void, MEMIF_CODE) class_MemIf_Functionality::GetJobResult(void){
 }
 
-FUNC(void, MEMIF_CODE) class_MemIf_Unused::InvalidateBlock(void){
+FUNC(void, MEMIF_CODE) class_MemIf_Functionality::InvalidateBlock(void){
 }
 
-FUNC(void, MEMIF_CODE) class_MemIf_Unused::EraseImmediateBlock(void){
+FUNC(void, MEMIF_CODE) class_MemIf_Functionality::EraseImmediateBlock(void){
 }
 
 /******************************************************************************/
