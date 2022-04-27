@@ -32,19 +32,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class class_MemIf_Functionality{
-   public:
-      FUNC(void, MEMIF_CODE) SetMode             (void);
-      FUNC(void, MEMIF_CODE) Read                (void);
-      FUNC(void, MEMIF_CODE) Write               (void);
-      FUNC(void, MEMIF_CODE) Cancel              (void);
-      FUNC(void, MEMIF_CODE) GetStatus           (void);
-      FUNC(void, MEMIF_CODE) GetJobResult        (void);
-      FUNC(void, MEMIF_CODE) GetVersionInfo      (void);
-      FUNC(void, MEMIF_CODE) InvalidateBlock     (void);
-      FUNC(void, MEMIF_CODE) EraseImmediateBlock (void);
-};
-
 class module_MemIf:
       public abstract_module
    ,  public infMemIf_NvM
