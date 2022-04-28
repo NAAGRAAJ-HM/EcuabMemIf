@@ -7,6 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "MemIf_core.hpp"
 #include "infMemIf_EcuM.hpp"
 #include "infMemIf_Dcm.hpp"
 #include "infMemIf_SchM.hpp"
