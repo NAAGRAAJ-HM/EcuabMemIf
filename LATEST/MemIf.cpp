@@ -7,11 +7,9 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "CfgMemIf.hpp"
 #include "MemIf_core.hpp"
-#include "infMemIf_EcuM.hpp"
-#include "infMemIf_Dcm.hpp"
-#include "infMemIf_SchM.hpp"
-#include "infMemIf_NvM.hpp"
+#include "infMemIf.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -46,10 +44,7 @@ class module_MemIf:
       );
       FUNC(void, MEMIF_CODE) DeInitFunction (void);
       FUNC(void, MEMIF_CODE) MainFunction   (void);
-
-      FUNC(void, MEMIF_CODE) Cancel         (void);
-      FUNC(void, MEMIF_CODE) Read           (void);
-      FUNC(void, MEMIF_CODE) Write          (void);
+      MEMIF_CORE_FUNCTIONALITIES
 };
 
 extern VAR(module_MemIf, MEMIF_VAR) MemIf;
@@ -65,7 +60,6 @@ CONSTP2VAR(infMemIf_NvM,  MEMIF_VAR, MEMIF_CONST) gptrinfMemIf_NvM        = &Mem
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
-#include "CfgMemIf.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
@@ -167,13 +161,13 @@ FUNC(void, MEMIF_CODE) module_MemIf::MainFunction(void){
 #endif
 }
 
-FUNC(void, MEMIF_CODE) module_MemIf::Cancel(void){
+FUNC(void, MEMIF_CODE) class_MemIf_Functionality::Cancel(void){
 }
 
-FUNC(void, MEMIF_CODE) module_MemIf::Read(void){
+FUNC(void, MEMIF_CODE) class_MemIf_Functionality::Read(void){
 }
 
-FUNC(void, MEMIF_CODE) module_MemIf::Write(void){
+FUNC(void, MEMIF_CODE) class_MemIf_Functionality::Write(void){
 }
 
 FUNC(void, MEMIF_CODE) class_MemIf_Functionality::SetMode(void){
