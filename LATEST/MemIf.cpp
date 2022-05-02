@@ -161,28 +161,28 @@ FUNC(void, MEMIF_CODE) module_MemIf::MainFunction(void){
 #endif
 }
 
-FUNC(void, MEMIF_CODE) class_MemIf_Functionality::Cancel(void){
+FUNC(void, MEMIF_CODE) module_MemIf::Cancel(void){
 }
 
-FUNC(void, MEMIF_CODE) class_MemIf_Functionality::Read(void){
+FUNC(void, MEMIF_CODE) module_MemIf::Read(void){
 }
 
-FUNC(void, MEMIF_CODE) class_MemIf_Functionality::Write(void){
+FUNC(void, MEMIF_CODE) module_MemIf::Write(void){
 }
 
-FUNC(void, MEMIF_CODE) class_MemIf_Functionality::SetMode(void){
+FUNC(void, MEMIF_CODE) module_MemIf::SetMode(void){
 }
 
-FUNC(void, MEMIF_CODE) class_MemIf_Functionality::GetStatus(void){
+FUNC(void, MEMIF_CODE) module_MemIf::GetStatus(void){
 }
 
-FUNC(void, MEMIF_CODE) class_MemIf_Functionality::GetJobResult(void){
+FUNC(void, MEMIF_CODE) module_MemIf::GetJobResult(void){
 }
 
-FUNC(void, MEMIF_CODE) class_MemIf_Functionality::InvalidateBlock(void){
+FUNC(void, MEMIF_CODE) module_MemIf::InvalidateBlock(void){
 }
 
-FUNC(void, MEMIF_CODE) class_MemIf_Functionality::EraseImmediateBlock(void){
+FUNC(void, MEMIF_CODE) module_MemIf::EraseImmediateBlock(void){
 }
 
 /******************************************************************************/

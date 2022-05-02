@@ -19,7 +19,6 @@
               FUNC(void, MEMIF_CODE) Cancel              (void);               \
               FUNC(void, MEMIF_CODE) GetStatus           (void);               \
               FUNC(void, MEMIF_CODE) GetJobResult        (void);               \
-              FUNC(void, MEMIF_CODE) GetVersionInfo      (void);               \
               FUNC(void, MEMIF_CODE) InvalidateBlock     (void);               \
               FUNC(void, MEMIF_CODE) EraseImmediateBlock (void);               \
 
@@ -30,7 +29,6 @@
       virtual FUNC(void, MEMIF_CODE) Cancel              (void) = 0;           \
       virtual FUNC(void, MEMIF_CODE) GetStatus           (void) = 0;           \
       virtual FUNC(void, MEMIF_CODE) GetJobResult        (void) = 0;           \
-      virtual FUNC(void, MEMIF_CODE) GetVersionInfo      (void) = 0;           \
       virtual FUNC(void, MEMIF_CODE) InvalidateBlock     (void) = 0;           \
       virtual FUNC(void, MEMIF_CODE) EraseImmediateBlock (void) = 0;           \
 
