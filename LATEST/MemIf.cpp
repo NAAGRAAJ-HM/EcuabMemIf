@@ -115,7 +115,7 @@ FUNC(void, MEMIF_CODE) module_MemIf::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  MEMIF_E_UNINIT
       );
 #endif
    }
@@ -135,7 +135,7 @@ FUNC(void, MEMIF_CODE) module_MemIf::DeInitFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  MEMIF_E_UNINIT
       );
 #endif
    }
@@ -154,7 +154,7 @@ FUNC(void, MEMIF_CODE) module_MemIf::MainFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  MEMIF_E_UNINIT
       );
 #endif
    }
