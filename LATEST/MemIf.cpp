@@ -36,6 +36,13 @@ class module_MemIf:
    ,  public infMemIf_NvM
    ,  public class_MemIf_Functionality
 {
+   private:
+/******************************************************************************/
+/* OBJECTS                                                                    */
+/******************************************************************************/
+            Std_TypeReturn          IsInitDone{E_NOT_OK};
+      const CfgModule_TypeAbstract* lptrCfg{(CfgModule_TypeAbstract*)NULL_PTR};
+
    public:
       module_MemIf(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
