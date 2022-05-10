@@ -91,7 +91,10 @@ FUNC(void, MEMIF_CODE) module_MemIf::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, MEMIF_CONFIG_DATA, MEMIF_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == MemIf_InitCheck)
-   if(E_OK != IsInitDone){
+   if(
+         E_OK
+      != IsInitDone
+   ){
 #endif
       if(NULL_PTR != lptrCfgModule){
          if(STD_HIGH){
@@ -129,7 +132,10 @@ FUNC(void, MEMIF_CODE) module_MemIf::InitFunction(
 
 FUNC(void, MEMIF_CODE) module_MemIf::DeInitFunction(void){
 #if(STD_ON == MemIf_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == MemIf_InitCheck)
       IsInitDone = E_NOT_OK;
@@ -149,7 +155,10 @@ FUNC(void, MEMIF_CODE) module_MemIf::DeInitFunction(void){
 
 FUNC(void, MEMIF_CODE) module_MemIf::MainFunction(void){
 #if(STD_ON == MemIf_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == MemIf_InitCheck)
    }
