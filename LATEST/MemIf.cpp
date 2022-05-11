@@ -9,7 +9,7 @@
 #include "Module.hpp"
 #include "CfgMemIf.hpp"
 #include "MemIf_core.hpp"
-#include "infMemIf.hpp"
+#include "infMemIf_Exp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -32,6 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_MemIf:
+   INTERFACES_EXPORTED_MEMIF
       public abstract_module
    ,  public infMemIf_NvM
    ,  public class_MemIf_Functionality
