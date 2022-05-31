@@ -32,9 +32,8 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_MemIf:
-   INTERFACES_EXPORTED_MEMIF
-      public abstract_module
-   ,  public infMemIf_NvM
+      INTERFACES_EXPORTED_MEMIF
+   ,  public abstract_module
    ,  public class_MemIf_Functionality
 {
    private:
