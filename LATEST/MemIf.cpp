@@ -10,6 +10,7 @@
 #include "CfgMemIf.hpp"
 #include "MemIf_core.hpp"
 #include "infMemIf_Exp.hpp"
+#include "infMemIf_Imp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
