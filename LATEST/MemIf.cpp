@@ -75,10 +75,10 @@ CONSTP2VAR(infMemIf_NvM,  MEMIF_VAR, MEMIF_CONST) gptrinfMemIf_NvM        = &Mem
 VAR(module_MemIf, MEMIF_VAR) MemIf(
    {
 #if(STD_ON == _ReSIM)
-   char strModuleName[6] = "MEMIF";
+         "MemIf"
 #else
 #endif
-         MEMIF_AR_RELEASE_VERSION_MAJOR
+      ,  MEMIF_AR_RELEASE_VERSION_MAJOR
       ,  MEMIF_AR_RELEASE_VERSION_MINOR
       ,  0x00
       ,  0xFF
