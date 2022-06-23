@@ -131,7 +131,9 @@ FUNC(void, MEMIF_CODE) module_MemIf::InitFunction(
 #endif
 }
 
-FUNC(void, MEMIF_CODE) module_MemIf::DeInitFunction(void){
+FUNC(void, MEMIF_CODE) module_MemIf::DeInitFunction(
+   void
+){
 #if(STD_ON == MemIf_InitCheck)
    if(
          E_OK
@@ -154,7 +156,9 @@ FUNC(void, MEMIF_CODE) module_MemIf::DeInitFunction(void){
 #endif
 }
 
-FUNC(void, MEMIF_CODE) module_MemIf::MainFunction(void){
+FUNC(void, MEMIF_CODE) module_MemIf::MainFunction(
+   void
+){
 #if(STD_ON == MemIf_InitCheck)
    if(
          E_OK
@@ -176,28 +180,44 @@ FUNC(void, MEMIF_CODE) module_MemIf::MainFunction(void){
 #endif
 }
 
-FUNC(void, MEMIF_CODE) module_MemIf::Cancel(void){
+FUNC(void, MEMIF_CODE) module_MemIf::Cancel(
+   void
+){
 }
 
-FUNC(void, MEMIF_CODE) module_MemIf::Read(void){
+FUNC(void, MEMIF_CODE) module_MemIf::Read(
+   void
+){
 }
 
-FUNC(void, MEMIF_CODE) module_MemIf::Write(void){
+FUNC(void, MEMIF_CODE) module_MemIf::Write(
+   void
+){
 }
 
-FUNC(void, MEMIF_CODE) module_MemIf::SetMode(void){
+FUNC(void, MEMIF_CODE) module_MemIf::SetMode(
+   void
+){
 }
 
-FUNC(void, MEMIF_CODE) module_MemIf::GetStatus(void){
+FUNC(void, MEMIF_CODE) module_MemIf::GetStatus(
+   void
+){
 }
 
-FUNC(void, MEMIF_CODE) module_MemIf::GetJobResult(void){
+FUNC(void, MEMIF_CODE) module_MemIf::GetJobResult(
+   void
+){
 }
 
-FUNC(void, MEMIF_CODE) module_MemIf::InvalidateBlock(void){
+FUNC(void, MEMIF_CODE) module_MemIf::InvalidateBlock(
+   void
+){
 }
 
-FUNC(void, MEMIF_CODE) module_MemIf::EraseImmediateBlock(void){
+FUNC(void, MEMIF_CODE) module_MemIf::EraseImmediateBlock(
+   void
+){
 }
 
 /******************************************************************************/
