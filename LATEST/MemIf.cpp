@@ -83,12 +83,7 @@ FUNC(void, MEMIF_CODE) module_MemIf::InitFunction(
    ){
 #endif
       if(NULL_PTR != lptrCfgModule){
-         if(STD_HIGH){
-            lptrCfg = lptrCfgModule;
-         }
-         else{
-            lptrCfg = &PBcfgMemIf;
-         }
+         lptrCfg = lptrCfgModule;
       }
       else{
 #if(STD_ON == MemIf_DevErrorDetect)
