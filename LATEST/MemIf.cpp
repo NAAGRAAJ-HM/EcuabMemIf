@@ -7,9 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
-#include "CfgMemIf.hpp"
-#include "MemIf_core.hpp"
-#include "infMemIf_Exp.hpp"
+#include "MemIf.hpp"
 #include "infMemIf_Imp.hpp"
 
 /******************************************************************************/
@@ -32,26 +30,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_MemIf:
-      INTERFACES_EXPORTED_MEMIF
-   ,  public abstract_module
-   ,  public class_MemIf_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-
-   public:
-      FUNC(void, MEMIF_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, MEMIF_CONFIG_DATA, MEMIF_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, MEMIF_CODE) DeInitFunction (void);
-      FUNC(void, MEMIF_CODE) MainFunction   (void);
-      MEMIF_CORE_FUNCTIONALITIES
-};
-
-extern VAR(module_MemIf, MEMIF_VAR) MemIf;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
