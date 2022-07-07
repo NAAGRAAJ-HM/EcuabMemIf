@@ -8,9 +8,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "infMemIf_EcuM.hpp"
-#include "infMemIf_Dcm.hpp"
 #include "infMemIf_Det.hpp"
-#include "infMemIf_SchM.hpp"
 #include "infMemIf_NvM.hpp"
 
 /******************************************************************************/
