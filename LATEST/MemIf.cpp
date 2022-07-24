@@ -48,7 +48,8 @@ VAR(module_MemIf, MEMIF_VAR) MemIf;
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, MEMIF_CODE) module_MemIf::InitFunction(
-   CONSTP2CONST(CfgModule_TypeAbstract, MEMIF_CONFIG_DATA, MEMIF_APPL_CONST) lptrCfgModule
+      CONSTP2CONST(ConstModule_TypeAbstract, MEMIF_CONST,       MEMIF_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   MEMIF_CONFIG_DATA, MEMIF_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == MemIf_InitCheck)
    if(
@@ -56,8 +57,12 @@ FUNC(void, MEMIF_CODE) module_MemIf::InitFunction(
       != IsInitDone
    ){
 #endif
-      if(NULL_PTR != lptrCfgModule){
-         lptrCfg = lptrCfgModule;
+      if(
+            (NULL_PTR != lptrConstModule)
+         && (NULL_PTR != lptrCfgModule)
+      ){
+         lptrConst = lptrConstModule;
+         lptrCfg   = lptrCfgModule;
       }
       else{
 #if(STD_ON == MemIf_DevErrorDetect)

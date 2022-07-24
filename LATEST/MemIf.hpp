@@ -7,6 +7,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
+#include "ConstMemIf.hpp"
 #include "CfgMemIf.hpp"
 #include "MemIf_core.hpp"
 #include "infMemIf_Exp.hpp"
@@ -31,13 +32,15 @@ class module_MemIf:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
+      const ConstMemIf_Type* lptrConst = (ConstMemIf_Type*)NULL_PTR;
 
    public:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
       FUNC(void, MEMIF_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, MEMIF_CONFIG_DATA, MEMIF_APPL_CONST) lptrCfgModule
+            CONSTP2CONST(ConstModule_TypeAbstract, MEMIF_CONST,       MEMIF_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   MEMIF_CONFIG_DATA, MEMIF_APPL_CONST) lptrCfgModule
       );
       FUNC(void, MEMIF_CODE) DeInitFunction (void);
       FUNC(void, MEMIF_CODE) MainFunction   (void);
