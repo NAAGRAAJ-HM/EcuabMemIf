@@ -61,7 +61,7 @@ FUNC(void, MEMIF_CODE) module_MemIf::InitFunction(
             (NULL_PTR != lptrConstModule)
          && (NULL_PTR != lptrCfgModule)
       ){
-         lptrConst = lptrConstModule;
+         lptrConst = (const ConstMemIf_Type*)lptrConstModule;
          lptrCfg   = lptrCfgModule;
       }
       else{
