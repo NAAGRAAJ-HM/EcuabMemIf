@@ -13,7 +13,7 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define INTERFACES_EXMCALPORTED_ECUABMEMIF                            public infEcuabMemIf_ServiceNvM
+#define INTERFACES_EXPORTED_MEMIF                            public infEcuabMemIf_ServiceNvM
 
 /******************************************************************************/
 /* MACROS                                                                     */

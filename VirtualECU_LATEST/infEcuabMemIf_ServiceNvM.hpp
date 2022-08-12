@@ -25,9 +25,9 @@ class infEcuabMemIf_ServiceNvM{
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-      virtual FUNC(void, MEMIF_CODE) McalCancel (void) = 0;
-      virtual FUNC(void, MEMIF_CODE) Read   (void) = 0;
-      virtual FUNC(void, MEMIF_CODE) Write  (void) = 0;
+      virtual FUNC(void, ECUABMEMIF_CODE) McalCancel (void) = 0;
+      virtual FUNC(void, ECUABMEMIF_CODE) Read   (void) = 0;
+      virtual FUNC(void, ECUABMEMIF_CODE) Write  (void) = 0;
 };
 
 /******************************************************************************/

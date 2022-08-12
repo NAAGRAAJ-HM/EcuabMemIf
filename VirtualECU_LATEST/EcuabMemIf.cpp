@@ -13,18 +13,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define MEMIF_AR_RELEASE_VERSION_MAJOR                                         4
-#define MEMIF_AR_RELEASE_VERSION_MINOR                                         3
+#define ECUABMEMIF_AR_RELEASE_VERSION_MAJOR                                         4
+#define ECUABMEMIF_AR_RELEASE_VERSION_MINOR                                         3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(MEMIF_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
-   #error "Incompatible MEMIF_AR_RELEASE_VERSION_MAJOR!"
+#if(ECUABMEMIF_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible ECUABMEMIF_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(MEMIF_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
-   #error "Incompatible MEMIF_AR_RELEASE_VERSION_MINOR!"
+#if(ECUABMEMIF_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible ECUABMEMIF_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -42,14 +42,14 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_EcuabMemIf, MEMIF_VAR) EcuabMemIf;
+VAR(module_EcuabMemIf, ECUABMEMIF_VAR) EcuabMemIf;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, MEMIF_CODE) module_EcuabMemIf::InitFunction(
-      CONSTP2CONST(ConstModule_TypeAbstract, MEMIF_CONST,       MEMIF_APPL_CONST) lptrConstModule
-   ,  CONSTP2CONST(CfgModule_TypeAbstract,   MEMIF_CONFIG_DATA, MEMIF_APPL_CONST) lptrCfgModule
+FUNC(void, ECUABMEMIF_CODE) module_EcuabMemIf::InitFunction(
+      CONSTP2CONST(ConstModule_TypeAbstract, ECUABMEMIF_CONST,       ECUABMEMIF_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   ECUABMEMIF_CONFIG_DATA, ECUABMEMIF_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == EcuabMemIf_InitCheck)
    if(
@@ -83,14 +83,14 @@ FUNC(void, MEMIF_CODE) module_EcuabMemIf::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  MEMIF_E_UNINIT
+         ,  ECUABMEMIF_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, MEMIF_CODE) module_EcuabMemIf::DeInitFunction(
+FUNC(void, ECUABMEMIF_CODE) module_EcuabMemIf::DeInitFunction(
    void
 ){
 #if(STD_ON == EcuabMemIf_InitCheck)
@@ -108,14 +108,14 @@ FUNC(void, MEMIF_CODE) module_EcuabMemIf::DeInitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  MEMIF_E_UNINIT
+         ,  ECUABMEMIF_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, MEMIF_CODE) module_EcuabMemIf::MainFunction(
+FUNC(void, ECUABMEMIF_CODE) module_EcuabMemIf::MainFunction(
    void
 ){
 #if(STD_ON == EcuabMemIf_InitCheck)
@@ -132,49 +132,49 @@ FUNC(void, MEMIF_CODE) module_EcuabMemIf::MainFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  MEMIF_E_UNINIT
+         ,  ECUABMEMIF_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, MEMIF_CODE) module_EcuabMemIf::McalCancel(
+FUNC(void, ECUABMEMIF_CODE) module_EcuabMemIf::McalCancel(
    void
 ){
 }
 
-FUNC(void, MEMIF_CODE) module_EcuabMemIf::Read(
+FUNC(void, ECUABMEMIF_CODE) module_EcuabMemIf::Read(
    void
 ){
 }
 
-FUNC(void, MEMIF_CODE) module_EcuabMemIf::Write(
+FUNC(void, ECUABMEMIF_CODE) module_EcuabMemIf::Write(
    void
 ){
 }
 
-FUNC(void, MEMIF_CODE) module_EcuabMemIf::SetMode(
+FUNC(void, ECUABMEMIF_CODE) module_EcuabMemIf::SetMode(
    void
 ){
 }
 
-FUNC(void, MEMIF_CODE) module_EcuabMemIf::GetStatus(
+FUNC(void, ECUABMEMIF_CODE) module_EcuabMemIf::GetStatus(
    void
 ){
 }
 
-FUNC(void, MEMIF_CODE) module_EcuabMemIf::GetJobResult(
+FUNC(void, ECUABMEMIF_CODE) module_EcuabMemIf::GetJobResult(
    void
 ){
 }
 
-FUNC(void, MEMIF_CODE) module_EcuabMemIf::InvalidateBlock(
+FUNC(void, ECUABMEMIF_CODE) module_EcuabMemIf::InvalidateBlock(
    void
 ){
 }
 
-FUNC(void, MEMIF_CODE) module_EcuabMemIf::EraseImmediateBlock(
+FUNC(void, ECUABMEMIF_CODE) module_EcuabMemIf::EraseImmediateBlock(
    void
 ){
 }

@@ -1,20 +1,36 @@
 #pragma once
 /******************************************************************************/
-/* File   : EcuabMemIf.hpp                                                         */
+/* File   : EcuabMemIf_core.hpp                                                    */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "ConstEcuabMemIf.hpp"
-#include "CfgEcuabMemIf.hpp"
-#include "EcuabMemIf_core.hpp"
-#include "infEcuabMemIf_Exp.hpp"
+#include "CompilerCfg_EcuabMemIf.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define MEMIF_CORE_FUNCTIONALITIES                                             \
+              FUNC(void, MEMIF_CODE) SetMode             (void);               \
+              FUNC(void, MEMIF_CODE) Read                (void);               \
+              FUNC(void, MEMIF_CODE) Write               (void);               \
+              FUNC(void, MEMIF_CODE) McalCancel              (void);               \
+              FUNC(void, MEMIF_CODE) GetStatus           (void);               \
+              FUNC(void, MEMIF_CODE) GetJobResult        (void);               \
+              FUNC(void, MEMIF_CODE) InvalidateBlock     (void);               \
+              FUNC(void, MEMIF_CODE) EraseImmediateBlock (void);               \
+
+#define MEMIF_CORE_FUNCTIONALITIES_VIRTUAL                                     \
+      virtual FUNC(void, MEMIF_CODE) SetMode             (void) = 0;           \
+      virtual FUNC(void, MEMIF_CODE) Read                (void) = 0;           \
+      virtual FUNC(void, MEMIF_CODE) Write               (void) = 0;           \
+      virtual FUNC(void, MEMIF_CODE) McalCancel              (void) = 0;           \
+      virtual FUNC(void, MEMIF_CODE) GetStatus           (void) = 0;           \
+      virtual FUNC(void, MEMIF_CODE) GetJobResult        (void) = 0;           \
+      virtual FUNC(void, MEMIF_CODE) InvalidateBlock     (void) = 0;           \
+      virtual FUNC(void, MEMIF_CODE) EraseImmediateBlock (void) = 0;           \
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -23,28 +39,9 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_EcuabMemIf:
-      INTERFACES_EXMCALPORTED_ECUABMEMIF
-   ,  public abstract_module
-   ,  public class_EcuabMemIf_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-      const ConstEcuabMemIf_Type* lptrConst = (ConstEcuabMemIf_Type*)NULL_PTR;
-
+class class_EcuabMemIf_Functionality{
    public:
-/******************************************************************************/
-/* FUNCTIONS                                                                  */
-/******************************************************************************/
-      FUNC(void, ECUABMEMIF_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, ECUABMEMIF_CONST,       ECUABMEMIF_APPL_CONST) lptrConstModule
-         ,  CONSTP2CONST(CfgModule_TypeAbstract,   ECUABMEMIF_CONFIG_DATA, ECUABMEMIF_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, ECUABMEMIF_CODE) DeInitFunction (void);
-      FUNC(void, ECUABMEMIF_CODE) MainFunction   (void);
-      ECUABMEMIF_CORE_FUNCTIONALITIES
+      MEMIF_CORE_FUNCTIONALITIES_VIRTUAL
 };
 
 /******************************************************************************/
@@ -58,7 +55,10 @@ class module_EcuabMemIf:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern VAR(module_EcuabMemIf, ECUABMEMIF_VAR) EcuabMemIf;
+
+/******************************************************************************/
+/* FUNCTIONS                                                                  */
+/******************************************************************************/
 
 /******************************************************************************/
 /* EOF                                                                        */
