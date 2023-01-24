@@ -1,6 +1,6 @@
 #pragma once
 /******************************************************************************/
-/* File   : infEcuabMemIf_ServiceNvM.hpp                                                  */
+/* File   : infEcuabMemIf_ServiceNvM.hpp                                      */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
@@ -12,6 +12,11 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define CONSTECUABMEMIF_AR_RELEASE_VERSION_MAJOR                               4
+#define CONSTECUABMEMIF_AR_RELEASE_VERSION_MINOR                               3
+
+#define Const_DefaultInit_ConstEcuabMemIf                                                                              \
+   ,  {CONSTECUABMEMIF_AR_RELEASE_VERSION_MAJOR, CONSTECUABMEMIF_AR_RELEASE_VERSION_MINOR, 0x00,0xFF,0x01,'0','1','0'} \
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -26,8 +31,8 @@ class infEcuabMemIf_ServiceNvM{
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
       virtual FUNC(void, ECUABMEMIF_CODE) McalCancel (void) = 0;
-      virtual FUNC(void, ECUABMEMIF_CODE) Read   (void) = 0;
-      virtual FUNC(void, ECUABMEMIF_CODE) Write  (void) = 0;
+      virtual FUNC(void, ECUABMEMIF_CODE) Read       (void) = 0;
+      virtual FUNC(void, ECUABMEMIF_CODE) Write      (void) = 0;
 };
 
 /******************************************************************************/
