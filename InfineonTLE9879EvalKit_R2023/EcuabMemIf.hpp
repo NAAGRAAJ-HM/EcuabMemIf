@@ -1,13 +1,13 @@
 #pragma once
 /******************************************************************************/
-/* File   : EcuabMemIf.hpp                                                         */
+/* File   : EcuabMemIf.hpp                                                    */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "ConstEcuabMemIf.hpp"
+#include "infEcuabMemIf_ServiceNvM_Types.hpp"
 #include "CfgEcuabMemIf.hpp"
 #include "EcuabMemIf_core.hpp"
 #include "infEcuabMemIf_Exp.hpp"
