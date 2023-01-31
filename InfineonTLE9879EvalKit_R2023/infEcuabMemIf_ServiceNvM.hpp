@@ -12,11 +12,8 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define CONSTECUABMEMIF_AR_RELEASE_VERSION_MAJOR                               4
-#define CONSTECUABMEMIF_AR_RELEASE_VERSION_MINOR                               3
-
-#define Const_DefaultInit_ConstEcuabMemIf                                                                              \
-   ,  {CONSTECUABMEMIF_AR_RELEASE_VERSION_MAJOR, CONSTECUABMEMIF_AR_RELEASE_VERSION_MINOR, 0x00,0xFF,0x01,'0','1','0'} \
+#define NvM_InitBlocksRom_EcuabMemIf                                                                         \
+   ,  {ECUABMEMIF_AR_RELEASE_VERSION_MAJOR, ECUABMEMIF_AR_RELEASE_VERSION_MINOR, 0x00,0xFF,0x01,'0','1','0'} \
 
 /******************************************************************************/
 /* MACROS                                                                     */
