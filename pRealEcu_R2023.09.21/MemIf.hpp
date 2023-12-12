@@ -7,7 +7,7 @@
 #include "MemIf_Cfg.hpp"
 
 #define MEMIF_MODULE_ID                    (22u)
-#define MEMIF_VENDOR_ID                    (30u)
+#define MEMIF_VENDOR_ID                    (1u)
 #define MEMIF_INSTANCE_ID                  (0u)
 
 #define MEMIF_AR_RELEASE_MAJOR_VERSION     (4u)
