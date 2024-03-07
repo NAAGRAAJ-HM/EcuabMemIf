@@ -1,0 +1,9 @@
+LIBRARIES_TO_BUILD      += EcuabIfMem
+MemIf_FILES              = EcuabIfMem\EcuabIfMem.c
+CC_FILES_TO_BUILD       += EcuabIfMem\EcuabIfMem.c
+CPP_FILES_TO_BUILD      +=
+ASM_FILES_TO_BUILD      +=
+DIRECTORIES_TO_CREATE   +=
+GENERATED_SOURCE_FILES  += $(GENDATA_DIR)\CfgEcuabIfMem.c
+COMMON_SOURCE_FILES     +=
+MAKE_CLEAN_RULES        +=
